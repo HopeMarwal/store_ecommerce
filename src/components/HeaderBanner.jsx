@@ -14,7 +14,10 @@ export default function HeaderBanner() {
         
       </div>
       
-      <img src={Image} alt="headphones" />
+      <div>
+        <img src={Image} alt="headphones" />
+      </div>
+      
     </div>
   )
 }
