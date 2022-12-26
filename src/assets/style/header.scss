@@ -1,0 +1,29 @@
+@import './var';
+
+header {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  .green {
+    color: rgb(0, 174, 0);
+  }
+  p {
+    margin-right: 30px;
+  }
+  .toggle {
+    border-radius: 10px;
+    background-color: $bg-icon-toggle-light;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    svg {
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+}
