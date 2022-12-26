@@ -7,3 +7,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

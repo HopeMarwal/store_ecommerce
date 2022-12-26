@@ -13,6 +13,8 @@ export default function Header() {
     <header>
       <AiTwotoneCheckCircle  className='green'/>
       <p>0 789 789 789 89</p>
+
+      {/* Change toggle icon when clicked */}
       <span className='toggle'>
         <BsFillMoonFill />
       </span>
