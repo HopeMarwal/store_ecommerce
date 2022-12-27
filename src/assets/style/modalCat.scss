@@ -29,8 +29,15 @@
       transition: all 0.5s linear;
       width: 100%;
     }
+    p {
+      text-transform: capitalize;
+      transition: all 0.5s linear;
+    }
     &:hover {
       transform: scale(1.02);
+      p {
+        color: rgb(231, 231, 231);
+      }
       .laptop {
         img {
           filter: drop-shadow(1px 1px 5px #58E600);
