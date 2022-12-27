@@ -1,7 +1,12 @@
-import React from 'react'
+//scss
+import '../assets/style/cardItem.scss'
 
-export default function CardItem() {
+export default function CardItem({item}) {
   return (
-    <div>CardItem</div>
+    <div className='card-item'>
+      <img src={item.img} alt={item.desc} />
+      <p className='desc'>{item.desc}</p>
+      <p className="price">$ {item.price}</p>
+    </div>
   )
 }

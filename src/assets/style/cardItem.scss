@@ -1,0 +1,32 @@
+@import './var';
+
+.card-item {
+  padding: 20px 30px;
+  background-color: $bg-category-light;
+  border-radius: 10px;
+  width: calc(25% - 5px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  img {
+    transition: all 0.3s linear;
+    width: 100%;
+    margin-bottom: auto;
+  }
+  .price {
+    transition: all 0.3s linear;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+  .desc {
+    transition: all 0.3s linear;
+  }
+  &:hover {
+    box-shadow: $box-shadow-light;
+    img, .price, .desc  {
+      transform: scale(1.05);
+    }
+  }
+}

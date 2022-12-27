@@ -34,7 +34,7 @@
       transition: all 0.3s linear;
     }
     &:hover {
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+      box-shadow: $box-shadow-light;
       img {
         transform: scale(1.05);
       }
