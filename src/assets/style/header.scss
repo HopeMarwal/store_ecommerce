@@ -6,6 +6,7 @@ header {
   gap: 10px;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
   .green {
     color: rgb(0, 174, 0);
   }
@@ -25,5 +26,10 @@ header {
       color: #fff;
       font-size: 25px;
     }
+  }
+  .modal {
+    top: 60px;
+    right: 5px;
+    color: $gray;
   }
 }

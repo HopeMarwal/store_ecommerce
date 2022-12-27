@@ -1,12 +1,9 @@
 @import './var';
 
-.modalCategories {
+.modal {
   position: absolute;
   z-index: 10;
   padding: 15px;
-  top: 109px;
-  left: 17%;
-  width: 500px;
   background-color: rgba(0, 0, 0, 0.548);
   backdrop-filter: blur(10px);
   display: flex;
@@ -64,6 +61,24 @@
         }
       }
 
+    }
+  }
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    h5 {
+      font-size: 1.3em;
+      color: #ccc;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+    p {
+      margin-bottom: 9px;
+      span {
+        color: #fff;
+      }
     }
   }
 }
