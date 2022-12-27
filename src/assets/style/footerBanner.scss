@@ -1,0 +1,44 @@
+@import './var';
+
+.footerBanner {
+  background-color: #E81010;
+  color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .small {
+    font-size: 1.5em;
+    margin-bottom: 50px;
+    max-width: 300px;
+  }
+  .right {
+    .small {
+      font-size: 1.3em;
+    }
+  }
+  .medium {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: capitalize;
+  }
+  .large {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+  }
+  .btn {
+    color: red;
+    font-weight: 700;
+  }
+}
