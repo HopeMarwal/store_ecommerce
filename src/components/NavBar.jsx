@@ -5,11 +5,14 @@ import { BsSearch, BsFillPersonFill } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 //scss
 import '../assets/style/nav.scss'
+import ModalCategories from './ModalCategories';
 
 export default function NavBar() {
   return (
     <nav>
       <span className='logo'>Store</span>
+      
+      <ModalCategories />
 
       <div className="categories">
         <RxHamburgerMenu />

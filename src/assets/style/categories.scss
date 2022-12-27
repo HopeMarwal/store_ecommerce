@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
     gap: 15px;
     cursor: pointer;
     .image {
@@ -21,6 +22,7 @@
       justify-content: center;
       border-radius: 50%;
       background-color: $bg-category-light;
+      transition: all 0.5s linear;
       img {
         width: 100%;
       }
@@ -31,8 +33,20 @@
       font-size: 1.1em;
     }
     &:hover {
-      .image {
+      .laptop {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #58E600;
+      }
+      .headphones {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #D93C8D;
+      }
+      .accesories, .smartphones {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #36BCBE;
+      }
+      .smartwatches {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #8C57A7;
+      }
+      .gadgets {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #E85B10;
       }
     }
   }

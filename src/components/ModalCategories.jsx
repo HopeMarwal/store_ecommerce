@@ -1,6 +1,6 @@
 import React from 'react';
 //scss
-import '../assets/style/categories.scss';
+import '../assets/style/modalCat.scss';
 //images
 import laptop from '../assets/img/icons/laptop.png';
 import accesories from '../assets/img/icons/accesories.webp';
@@ -9,8 +9,7 @@ import headphones from '../assets/img/icons/headphones.webp';
 import smartphone from '../assets/img/icons/phone.png';
 import watch from '../assets/img/icons/watch.webp'
 
-export default function CategoriesBanner() {
-
+export default function ModalCategories() {
   const categories = [
     {
       id: 1,
@@ -45,8 +44,7 @@ export default function CategoriesBanner() {
   ]
 
   return (
-    <div className='categories'>
-
+    <div className='modalCategories'>
       {
         categories.map((item) => {
           return (

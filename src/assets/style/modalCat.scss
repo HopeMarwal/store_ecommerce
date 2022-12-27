@@ -1,0 +1,62 @@
+@import './var';
+
+.modalCategories {
+  position: absolute;
+  z-index: 10;
+  padding: 15px;
+  top: 109px;
+  left: 17%;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.548);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 0 0 10px 10px;
+  .category {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: calc(33% - 7px);
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    img {
+      transition: all 0.5s linear;
+      width: 100%;
+    }
+    &:hover {
+      transform: scale(1.02);
+      .laptop {
+        img {
+          filter: drop-shadow(1px 1px 5px #58E600);
+        }
+      }
+      .headphones {
+        img {
+          filter: drop-shadow(1px 1px 5px #D93C8D);
+        }
+      }
+      .accesories, .smartphones {
+        img {
+          filter: drop-shadow(1px 1px 5px #36BCBE);
+        }
+      }
+      .smartwatches {
+        img {
+          filter: drop-shadow(1px 1px 5px #8C57A7);
+        }
+      }
+      .gadgets {
+        img {
+          filter: drop-shadow(1px 1px 5px #E85B10);
+        }
+      }
+
+    }
+  }
+}
