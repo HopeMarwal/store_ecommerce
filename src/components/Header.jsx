@@ -10,9 +10,12 @@ import '../assets/style/header.scss'
 
 export default function Header() {
   const [isModaOpen, setIsModalOpen] =  useState(false)
+
   return (
     <header>
       <AiTwotoneCheckCircle  className='green'/>
+      
+      {/* Toggle open modal contacts  */}
       <p onClick={() => setIsModalOpen(!isModaOpen)}>0 789 789 789 89</p>
 
       {/* Change toggle icon when clicked */}
