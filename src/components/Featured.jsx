@@ -10,6 +10,7 @@ import laptopNew from '../assets/img/laptop_new.webp'
 import smartphoneNew from '../assets/img/phones.webp'
 
 export default function Featured(props) {
+  //create array in sanity db
   const smartphone = {
     img: smartphoneCard,
     price: 250,
@@ -21,6 +22,7 @@ export default function Featured(props) {
     price: 450,
     desc: 'Asus ROG Strix G15 G513RW Eclipse, Gray'
   }
+
   return (
     <div className='featured'>
       <h3>Featured smartphones</h3>
