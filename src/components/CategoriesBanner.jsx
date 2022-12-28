@@ -10,7 +10,7 @@ import smartphone from '../assets/img/icons/phone.png';
 import watch from '../assets/img/icons/watch.webp'
 
 export default function CategoriesBanner() {
-
+  //move to sanity db
   const categories = [
     {
       id: 1,
