@@ -43,8 +43,6 @@ export default function Featured(props) {
       <h3>Laptop & PC</h3>
       <div className='featured_row'> 
 
-        
-        
         <div className='banner'>
           <h4>Laptops</h4>
           <img src={laptopNew} alt="featured_laptop" />
