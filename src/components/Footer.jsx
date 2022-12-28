@@ -1,4 +1,5 @@
 import React from 'react';
+//social icons 
 import { BsInstagram, BsTwitter } from 'react-icons/bs';
 //scss
 import '../assets/style/footer.scss'
