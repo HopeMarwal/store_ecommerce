@@ -1,7 +1,5 @@
-import React from 'react';
 //scss
 import '../assets/style/modal.scss';
-
 
 export default function Modal({children}) {
   return (
