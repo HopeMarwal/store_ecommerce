@@ -1,40 +1,29 @@
 //scss
 import '../assets/style/promo.scss'
-//img
-import smartphoneOne from '../assets/img/smartphone_card.webp';
-import laptopOne from '../assets/img/laptop_card.webp';
-import smartphoneTwo from '../assets/img/phone-b1.webp';
-import laptopTwo from '../assets/img/laptop-b1.webp'
+//component
 import PromoCard from './PromoCard';
+//react
+import { useEffect, useState } from 'react';
+//sanity
+import { client, urlFor } from '../lib/client'
 
 export default function Promos() {
-  const promos = [
-    {
-      id: 1,
-      img: smartphoneOne,
-      text: 'Best smartphone ever -20% off'
-    },
-    {
-      id: 2,
-      img: laptopOne,
-      text: 'Gaming laptop prebuild to order'
-    },
-    {
-      id: 3,
-      img: smartphoneTwo,
-      text: 'Make your broadcast moments'
-    },
-    {
-      id: 4,
-      img: laptopTwo,
-      text: 'Prebuild to order gaming laptop'
-    }
-  ]
+
+  const [data, setData] = useState([])
+  useEffect(() => {
+    client
+      .fetch('*[_type == "promo"]')
+      .then(res => {
+        setData(res)
+      })
+      .catch(err => {console.log(err)})
+  }, [])
+
   return (
     <div className='promo'>
       {
-        promos.map((item) => {
-          return <PromoCard promo={item} key={item.id} />
+        data && data.map((item) => {
+          return <PromoCard img={urlFor(item.image)} key={item._id} text={item.text} />
         })
       }
       
