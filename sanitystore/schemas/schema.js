@@ -5,7 +5,7 @@ import headerBanner from './headerBanner';
 import categories from './categories';
 import promo from './promo';
 import product from './product';
-
+import footerBanner from './footerBanner'
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
@@ -13,6 +13,7 @@ export default createSchema({
     headerBanner,
     categories,
     promo,
-    product
+    product,
+    footerBanner
   ]),
 })
