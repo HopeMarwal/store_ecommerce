@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//image
-import Image from '../assets/img/banner.webp'
 //style
 import '../assets/style/headerBanner.scss'
 //sanity
@@ -9,6 +7,7 @@ import { client, urlFor } from '../lib/client'
 
 export default function HeaderBanner() {
   const [dataBanner, setDataBanner] = useState({})
+  
   useEffect(() => {
     client
       .fetch('*[_type == "headerBanner"]')
