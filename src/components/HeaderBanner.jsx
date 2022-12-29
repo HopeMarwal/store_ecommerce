@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 //image
 import Image from '../assets/img/banner.webp'
 //style
 import '../assets/style/headerBanner.scss'
+//sanity
+import { client, urlFor } from '../lib/client'
+
 
 export default function HeaderBanner() {
+  const [dataBanner, setDataBanner] = useState({})
+  useEffect(() => {
+    client
+      .fetch('*[_type == "headerBanner"]')
+      .then(res => {setDataBanner(res[0])})
+      .catch(err => {console.log(err)})
+  }, [])
+
   return (
     <div className='headerBanner'>
       <div className='left'>
-        <p>25% off!!!</p>
-        <h1>SMILE</h1>
-        <h3>Best headphones ever</h3>
+        <p>{dataBanner.smallText && dataBanner.smallText}!!!</p>
+        <h1>{dataBanner.largeText && dataBanner.largeText}</h1>
+        <h3>{dataBanner.mediumText && dataBanner.mediumText}</h3>
         
       </div>
       
-      <div>
-        <img src={Image} alt="headphones" />
+      <div className='right'>
+        {dataBanner.image && (
+          <img src={urlFor(dataBanner.image)} alt="headphones" />
+        )}
       </div>
       
     </div>

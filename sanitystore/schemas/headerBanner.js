@@ -4,7 +4,27 @@ export default {
   type: 'document',
   fields: [
     {
-      name: ''
+      name: 'smallText',
+      title: 'SmallText',
+      type: 'string'
+    },
+    {
+      name: 'mediumText',
+      title: 'MediumText',
+      type: 'string'
+    },
+    {
+      name: 'largeText',
+      title: 'LargeText',
+      type: 'string'
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
     }
   ]
 }
