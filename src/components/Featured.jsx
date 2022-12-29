@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 //components
 import CardItem from './CardItem';
 //scss
 import '../assets/style/featured.scss'
 //images 
-import smartphoneCard from '../assets/img/smartphone_card.webp';
-import laptopCard from '../assets/img/laptop_card.webp'
 import laptopNew from '../assets/img/laptop_new.webp'
 import smartphoneNew from '../assets/img/phones.webp'
+//sanity 
+import {client, urlFor} from '../lib/client'
 
 export default function Featured(props) {
-  //create array in sanity db
-  const smartphone = {
-    img: smartphoneCard,
-    price: 250,
-    desc: 'Samsung Galaxy Fold4 12GB/256GB, Black Gray'
-  }
 
-  const laptop = {
-    img: laptopCard,
-    price: 450,
-    desc: 'Asus ROG Strix G15 G513RW Eclipse, Gray'
-  }
+  const [dataLaptop, setDataLaptop] = useState([])
+  const [dataSmartphone, setDataSmartphone] = useState([])
+  useEffect(() => {
+    client
+      .fetch('*[_type == "product"]')
+      .then(res => {
+        let laptop = res.filter((item) => item.category === 'laptop').slice(0,3)
+        let smartphone = res.filter((item) => item.category === 'smartphone').slice(0,3)
+        
+        setDataLaptop(laptop)
+        setDataSmartphone(smartphone)
+      })
+      .catch(err => {console.log(err)})
+  }, [])
+  //create array in sanity db
 
   return (
     <div className='featured'>
@@ -34,9 +38,18 @@ export default function Featured(props) {
           <img src={smartphoneNew} alt="featured_smartphone" />
         </div>
 
-        <CardItem item={smartphone} />
-        <CardItem item={smartphone} />
-        <CardItem item={smartphone} />
+        {
+          dataSmartphone && dataSmartphone.map((item) => {
+            return (
+              <CardItem
+                key={item._id}
+                price={item.price}
+                img={urlFor(item.image[0])}
+                desc={item.description}
+              />
+            )
+          })
+        }
 
       </div>
 
@@ -48,9 +61,18 @@ export default function Featured(props) {
           <img src={laptopNew} alt="featured_laptop" />
         </div>
 
-        <CardItem item={laptop} />
-        <CardItem item={laptop} />
-        <CardItem item={laptop} />
+        {
+          dataLaptop && dataLaptop.map((item) => {
+            return (
+              <CardItem
+                key={item._id}
+                price={item.price}
+                img={urlFor(item.image[0])}
+                desc={item.description}
+              />
+            )
+          })
+        }
 
       </div>
 

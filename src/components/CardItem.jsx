@@ -1,12 +1,12 @@
 //scss
 import '../assets/style/cardItem.scss'
 
-export default function CardItem({item}) {
+export default function CardItem({img, price, desc}) {
   return (
     <div className='card-item'>
-      <img src={item.img} alt={item.desc} />
-      <p className='desc'>{item.desc}</p>
-      <p className="price">$ {item.price}</p>
+      <img src={img} alt={desc} />
+      <p className='desc'>{desc}</p>
+      <p className="price">$ {price}</p>
     </div>
   )
 }

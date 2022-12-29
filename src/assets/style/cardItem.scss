@@ -13,7 +13,7 @@
   img {
     transition: all 0.3s linear;
     width: 100%;
-    margin-bottom: auto;
+    
   }
   .price {
     transition: all 0.3s linear;
@@ -22,6 +22,7 @@
   }
   .desc {
     transition: all 0.3s linear;
+    margin-bottom: auto;
   }
   &:hover {
     box-shadow: $box-shadow-light;

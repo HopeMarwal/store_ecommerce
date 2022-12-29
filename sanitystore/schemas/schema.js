@@ -4,6 +4,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import headerBanner from './headerBanner';
 import categories from './categories';
 import promo from './promo';
+import product from './product';
 
 export default createSchema({
   name: 'default',
@@ -11,6 +12,7 @@ export default createSchema({
     /* Your types here! */
     headerBanner,
     categories,
-    promo
+    promo,
+    product
   ]),
 })
