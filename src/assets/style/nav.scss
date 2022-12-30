@@ -101,6 +101,7 @@ nav {
 }
 @media (max-width: 768px) {
   nav {
+    gap: 10px;
     .logo {
       font-size: 2em;
     }
@@ -127,6 +128,14 @@ nav {
     .categories {
       font-size: 1em;
     }
+    .cart_icon {
+      font-size: 1.5em;
+    }
+    button {
+      svg {
+        font-size: 1.1em;
+      }
+    }
     .xs {
       display: block;
     }
@@ -139,7 +148,6 @@ nav {
       height: 100vh;
       top: 0;
       left: 0;
-
     }
   }
 }

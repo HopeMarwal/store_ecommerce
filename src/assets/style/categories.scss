@@ -56,3 +56,27 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .categories { 
+    .category {
+      width: 30%;
+      margin-bottom: 20px;
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .categories { 
+    .category {
+      width: 50%;
+      margin-bottom: 20px;
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+}

@@ -89,7 +89,7 @@ export default function NavBar() {
         onClick={handleClick}
       >
         <RxHamburgerMenu />
-        <span>All categories</span>
+        <span>Categories</span>
       </div>
 
       <div className='search'>
