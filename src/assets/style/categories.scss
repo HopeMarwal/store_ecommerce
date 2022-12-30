@@ -7,13 +7,16 @@
   margin-top: 30px;
   margin-bottom: 30px;
   .category {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-    gap: 15px;
     cursor: pointer;
+    transition: all 0.5s linear;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      
+    }
     .image {
       width: 100px;
       height: 100px;
@@ -33,13 +36,14 @@
       font-size: 1.1em;
     }
     &:hover {
+      transform: scale(1.05);
       .laptop {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #58E600;
       }
       .headphones {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #D93C8D;
       }
-      .accessories, .smartphones {
+      .accessories, .smartphone {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 8px -8px #36BCBE;
       }
       .smartwatches {

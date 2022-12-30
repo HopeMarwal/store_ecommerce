@@ -3,8 +3,10 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+//routes
 import Home from './pages/Home';
-import ProductItem from './components/ProductItem';
+import ProductItem from './pages/ProductItem';
+import Category from './pages/Category';
 //react router
 import {Routes, Route} from 'react-router-dom';
 
@@ -19,7 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:category/:productSlug" element={<ProductItem />} />
+        <Route path="/product/:category" element={<Category />} />
       </Routes>
+      
       <Footer />
     </div>
   );

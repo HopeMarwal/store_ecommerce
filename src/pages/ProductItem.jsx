@@ -7,7 +7,7 @@ import { client, urlFor } from '../lib/client'
 import '../assets/style/productItem.scss'
 
 export default function ProductItem() {
-  let { productSlug, category } = useParams()
+  let { productSlug } = useParams()
 
   const [data, setData] = useState({})
   const [imgIndex, setImgIndex] = useState(0)
@@ -71,6 +71,10 @@ export default function ProductItem() {
           <button className='btn add-to-cart'>Add to Cart</button>
           <button className='btn buy_now'>Buy Now</button>
         </div>
+      </div>
+
+      <div>
+        {/* TODO: slider */}
       </div>
     </div>
   )

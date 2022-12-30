@@ -1,0 +1,24 @@
+@import './var';
+
+.category-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px;
+  min-height: calc(100vh - 275px);
+  h3 {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: 400;
+    color: $text-secondary-light;
+  }
+  .product_container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    .link_item {
+      width: calc(25% - 10px);
+    }
+  }
+}

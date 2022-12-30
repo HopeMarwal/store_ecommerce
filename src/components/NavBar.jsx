@@ -5,26 +5,22 @@ import { BsSearch, BsFillPersonFill } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 //scss
 import '../assets/style/nav.scss'
+//components
 import Modal from './Modal';
-//images
-import laptop from '../assets/img/icons/laptop.png';
-import accesories from '../assets/img/icons/accesories.webp';
-import gadgets from '../assets/img/icons/Gadjets.png';
-import headphones from '../assets/img/icons/headphones.webp';
-import smartphone from '../assets/img/icons/phone.png';
-import watch from '../assets/img/icons/watch.webp'
 //sanity
 import { client, urlFor } from '../lib/client'
+//router
+import { Link } from 'react-router-dom'
 
 export default function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [data, setData] = useState({})
 
-  const [data, setData] = useState([])
   useEffect(() => {
     client
       .fetch('*[_type == "categories"]')
       .then(res => {
-        //sort by dcreated date
+        //sort by decreated date
         res.sort((a,b) => {
           let keyA = new Date(a._createdAt)
           let keyB = new Date(b._createdAt)
@@ -39,74 +35,52 @@ export default function NavBar() {
       .catch(err => {console.log(err)})
   }, [])
 
-  const categories = [
-    {
-      id: 1,
-      img: laptop,
-      title: 'laptop'
-    },
-    {
-      id: 2,
-      img: headphones,
-      title: 'headphones'
-    },
-    {
-      id: 3,
-      img: accesories,
-      title: 'accesories'
-    },
-    {
-      id: 4,
-      img: watch,
-      title: 'smartwatches'
-    },
-    {
-      id: 5,
-      img: gadgets,
-      title: 'gadgets'
-    },
-    {
-      id: 6,
-      img: smartphone,
-      title: 'smartphones'
-    },
-  ]
-
   const handleClick = () => {
     setIsModalOpen(!isModalOpen)
   }
 
+  const mapItems = (item) => {
+    //category map item jsx
+    return (
+      <div>
+        <div className={`image ${item.title}`}>
+          { item.icon && <img src={urlFor(item.icon)} alt={item.title} /> } 
+        </div>
+        <p>{item.title}</p>
+      </div>
+    )
+  }
+ 
+
   return (
     <nav>
-      <span className='logo'>Store</span>
-      
+      <span className='logo'>
+        <Link to="/">Store</Link>
+      </span>
      {
       isModalOpen && (
         <Modal>
-          {/* children */}
           {
-        categories.map((item) => {
-          return (
-            <div key={item.id} className='category'>
-
-              <div className={`image ${item.title}`}>
-                <img src={item.img} alt={item.title} />
-              </div>
-
-              <p>{item.title}</p>
-            </div>
-          )
-        })
-      }
+            data && data.map((item) => {
+              return (
+                <Link 
+                  onClick={() => setIsModalOpen(false)}
+                  className='category'
+                  key={item._id}
+                  to={`/product/${item.title}`}
+                >
+                  { mapItems(item) }
+                </Link>
+              )
+            })
+          }
         </Modal> 
       )
-
      } 
 
       <div 
         className="categories" 
         onClick={handleClick}
-        
       >
         <RxHamburgerMenu />
         <span>All categories</span>
