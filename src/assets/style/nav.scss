@@ -80,9 +80,66 @@ nav {
       color: #fff;
     }
   }
+  .xs {
+    display: none;
+  }
   .modal {
     left: 17%;
     top: 109px;
     width: 500px;
+  }
+}
+@media (max-width: 992px) {
+  nav {
+    .search {
+      display: none;
+    }
+  }
+  .categories {
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    .logo {
+      font-size: 2em;
+    }
+    .categories {
+      font-size: 1.3em;
+    }
+    .xs {
+      display: block;
+    }
+    .lg {
+      display: none;
+    }
+    .modal {
+      width: 450px;
+      top: 105px
+    }
+  }
+}
+@media (max-width: 576px) {
+  nav {
+    .logo {
+      font-size: 1.5em;
+    }
+    .categories {
+      font-size: 1em;
+    }
+    .xs {
+      display: block;
+    }
+    .lg {
+      display: none;
+    }
+    .modal {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+
+    }
   }
 }

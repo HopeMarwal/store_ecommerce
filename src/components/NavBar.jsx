@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 //icon
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { BsSearch, BsFillPersonFill } from 'react-icons/bs';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 //scss
 import '../assets/style/nav.scss'
 //components
@@ -60,6 +60,12 @@ export default function NavBar() {
      {
       isModalOpen && (
         <Modal>
+          <div className='icon'>
+            <span onClick={() => setIsModalOpen(false)}>
+              <AiOutlineClose />
+            </span>
+          </div>
+          
           {
             data && data.map((item) => {
               return (
@@ -100,10 +106,15 @@ export default function NavBar() {
         <AiOutlineShoppingCart />
       </div>
       
-      <button>
+      <button className='lg'>
         Login
         <BsFillPersonFill />
       </button>
+
+      <button className='xs'>
+        <BsFillPersonFill />
+      </button>
     </nav>
+
   )
 }
