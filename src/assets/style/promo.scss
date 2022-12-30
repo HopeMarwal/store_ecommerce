@@ -41,3 +41,28 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .promo {
+    &_card {
+      .text {
+        width: 60%;
+      }
+      h3 {
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 576px) {
+  .promo {
+    &_card {
+      width: 100%;
+    }
+  }
+}
