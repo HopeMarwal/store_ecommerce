@@ -25,12 +25,39 @@
       font-weight: 400;
       font-size: 1.3em;
     }
-    img{
+    .img_banner {
+      height: 100%;
       width: 100%;
       border-radius: 10px;
     }
   }
   .link_item {
     width: calc(25% - 5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .featured {
+    &_row {
+      flex-wrap: wrap;
+    }
+    .link_item, .banner {
+      width: calc(50% - 5px);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .featured {
+    &_row {
+      flex-wrap: wrap;
+    }
+    .banner {
+      display: none;
+    }
+    .link_item {
+      width: 90%;
+      margin: auto;
+    }
   }
 }

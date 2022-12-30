@@ -37,7 +37,11 @@ export default function Featured(props) {
 
         <div className='banner'>
           <h4>Smartphones</h4>
-          <img src={smartphoneNew} alt="featured_smartphone" />
+          <img 
+            className='img_banner'
+            src={smartphoneNew} 
+            alt="featured_smartphone" 
+          />
         </div>
 
         {
@@ -66,7 +70,11 @@ export default function Featured(props) {
 
         <div className='banner'>
           <h4>Laptops</h4>
-          <img src={laptopNew} alt="featured_laptop" />
+          <img 
+            className='img_banner'
+            src={laptopNew} 
+            alt="featured_laptop" 
+          />
         </div>
 
         {
