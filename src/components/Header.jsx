@@ -12,7 +12,7 @@ export default function Header() {
   const [isModaOpen, setIsModalOpen] =  useState(false)
 
   return (
-    <header>
+    <div className='header'>
       <AiTwotoneCheckCircle  className='green'/>
       
       {/* Toggle open modal contacts  */}
@@ -42,6 +42,6 @@ export default function Header() {
           </Modal>
         )
       }
-    </header>
+    </div>
   )
 }

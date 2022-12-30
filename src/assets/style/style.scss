@@ -4,13 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .App {
   background-color: $bg-ligth;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
-.home {
+
+.home, header {
   max-width: 1100px;
   margin: auto;
   padding: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+
 }
 .btn {
   background-color: #fff;

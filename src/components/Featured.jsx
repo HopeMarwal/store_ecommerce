@@ -8,11 +8,14 @@ import laptopNew from '../assets/img/laptop_new.webp'
 import smartphoneNew from '../assets/img/phones.webp'
 //sanity 
 import {client, urlFor} from '../lib/client'
+//react router
+import { Link } from 'react-router-dom';
 
 export default function Featured(props) {
 
   const [dataLaptop, setDataLaptop] = useState([])
   const [dataSmartphone, setDataSmartphone] = useState([])
+
   useEffect(() => {
     client
       .fetch('*[_type == "product"]')
@@ -25,7 +28,6 @@ export default function Featured(props) {
       })
       .catch(err => {console.log(err)})
   }, [])
-  //create array in sanity db
 
   return (
     <div className='featured'>
@@ -41,12 +43,14 @@ export default function Featured(props) {
         {
           dataSmartphone && dataSmartphone.map((item) => {
             return (
-              <CardItem
-                key={item._id}
-                price={item.price}
-                img={urlFor(item.image[0])}
-                desc={item.description}
-              />
+              <Link key={item._id} to={`/product/${item.category}/${item.slug.current}`}>
+                <CardItem
+                  price={item.price}
+                  img={urlFor(item.image[0])}
+                  desc={item.description}
+                />
+              </Link>
+              
             )
           })
         }
