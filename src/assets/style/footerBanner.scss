@@ -42,3 +42,61 @@
     font-weight: 700;
   }
 }
+
+@media (max-width: 992px) {
+  .footerBanner {
+    img {
+      width: 250px;
+    }
+    .medium {
+      font-size: 2em;
+    }
+    .right {
+      width: 35%;
+    }
+    .large {
+      font-size: 3.5em;
+    }
+    .small {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footerBanner {
+    img {
+      width: 200px;
+    }
+    .medium {
+      font-size: 1.5em;
+    }
+    .large {
+      font-size: 3em;
+    }
+    .right {
+      .small {
+        font-size: 1em;
+      }
+    }
+    .small {
+      font-size: 1em;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footerBanner {
+    .left {
+      display: none;
+    }
+    img {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      transform: none;
+      width: 200px;
+    }
+  }
+}
