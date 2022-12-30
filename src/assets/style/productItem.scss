@@ -6,6 +6,7 @@
   padding: 10px;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   .images {
     width: calc(50% - 5px);
     .image_container {
@@ -101,6 +102,43 @@
       color: #fff;
       font-weight: 500;
 
+    }
+  }
+  .maylike-products-wrapper {
+    width: 100%;
+    margin-top: 100px;
+    h2 {
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+    .marquee {
+      position: relative;
+      min-height: 350px;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .maylike-products-container {
+      display: flex;
+      gap: 10px;
+    }
+    .track {
+      position: absolute;
+      will-change: transform;
+      animation: marquee 15s linear infinite;
+      animation-direction: alternate;
+    }
+    .link_item-slider {
+      width: 20%;
+    }
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+    
+      to {
+        transform: translateX(-50%);
+      }
     }
   }
 }

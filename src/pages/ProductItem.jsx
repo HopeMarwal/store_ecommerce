@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 //router
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 //sanity
 import { client, urlFor } from '../lib/client'
 //style
 import '../assets/style/productItem.scss'
+//component
+import CardItem from '../components/CardItem';
 
 export default function ProductItem() {
   let { productSlug } = useParams()
 
   const [data, setData] = useState({})
+  const [products, setProducts] = useState([])
+
   const [imgIndex, setImgIndex] = useState(0)
 
   useEffect(() => {
@@ -17,9 +21,17 @@ export default function ProductItem() {
       .fetch(`*[_type == "product" && name == "${productSlug}"]`)
       .then(res => {
         setData(res[0])
-      })
+        client
+          .fetch(`*[_type == "product" && category == "${res[0].category}"]`)
+          .then(res => {
+            console.log(res)
+            setProducts(res)
+          })
+          .catch(err => {console.log(err)})
+        })
       .catch(err => {console.log(err)})
-  }, [])
+  }, [productSlug])
+
   return (
     <div className='product-item'>
 
@@ -73,8 +85,29 @@ export default function ProductItem() {
         </div>
       </div>
 
-      <div>
-        {/* TODO: slider */}
+      <div className='maylike-products-wrapper'>
+        <h2>You may also like</h2>
+        <div className='marquee'>
+          <div className='maylike-products-container track'>
+            {
+              products && products.map((item) => {
+                return (
+                  <Link 
+                    className='link_item-slider'
+                    key={item._id} 
+                    to={`/product/${item.category}/${item.slug.current}`}
+                  >
+                    <CardItem
+                      price={item.price}
+                      img={urlFor(item.image[0])}
+                      desc={item.description}
+                    />
+                  </Link>
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
     </div>
   )
