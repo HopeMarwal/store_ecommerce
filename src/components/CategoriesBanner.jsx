@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 //scss
 import '../assets/style/categories.scss';
-
 //sanity
 import { client, urlFor } from '../lib/client'
 

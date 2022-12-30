@@ -43,7 +43,11 @@ export default function Featured(props) {
         {
           dataSmartphone && dataSmartphone.map((item) => {
             return (
-              <Link key={item._id} to={`/product/${item.category}/${item.slug.current}`}>
+              <Link 
+                className='link_item'
+                key={item._id} 
+                to={`/product/${item.category}/${item.slug.current}`}
+              >
                 <CardItem
                   price={item.price}
                   img={urlFor(item.image[0])}
@@ -68,12 +72,17 @@ export default function Featured(props) {
         {
           dataLaptop && dataLaptop.map((item) => {
             return (
-              <CardItem
-                key={item._id}
-                price={item.price}
-                img={urlFor(item.image[0])}
-                desc={item.description}
-              />
+              <Link 
+                className='link_item'
+                key={item._id} 
+                to={`/product/${item.category}/${item.slug.current}`}
+              >
+                <CardItem
+                  price={item.price}
+                  img={urlFor(item.image[0])}
+                  desc={item.description}
+                />
+              </Link>
             )
           })
         }

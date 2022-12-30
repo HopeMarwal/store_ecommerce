@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //icon
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { BsSearch, BsFillPersonFill } from 'react-icons/bs';
@@ -13,9 +13,31 @@ import gadgets from '../assets/img/icons/Gadjets.png';
 import headphones from '../assets/img/icons/headphones.webp';
 import smartphone from '../assets/img/icons/phone.png';
 import watch from '../assets/img/icons/watch.webp'
+//sanity
+import { client, urlFor } from '../lib/client'
 
 export default function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const [data, setData] = useState([])
+  useEffect(() => {
+    client
+      .fetch('*[_type == "categories"]')
+      .then(res => {
+        //sort by dcreated date
+        res.sort((a,b) => {
+          let keyA = new Date(a._createdAt)
+          let keyB = new Date(b._createdAt)
+
+          if(keyA < keyB) return -1
+          if(keyA > keyB) return 1
+          return 0;
+        })
+
+        setData(res)
+      })
+      .catch(err => {console.log(err)})
+  }, [])
 
   const categories = [
     {
