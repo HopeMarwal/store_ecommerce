@@ -11,10 +11,13 @@ import Modal from './Modal';
 import { client, urlFor } from '../lib/client'
 //router
 import { Link } from 'react-router-dom'
+//context
+import { useStateContext } from '../context/CartContext';
 
 export default function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [data, setData] = useState({})
+  const { cartItems } = useStateContext()
 
   useEffect(() => {
     client
@@ -103,7 +106,11 @@ export default function NavBar() {
       </div>
       
       <div className='cart_icon'>
-        <AiOutlineShoppingCart />
+        <Link to="/cart">
+          <span>{cartItems.length}</span>
+          <AiOutlineShoppingCart />
+        </Link>
+       
       </div>
       
       <button className='lg'>

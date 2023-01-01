@@ -7,9 +7,13 @@ import { client, urlFor } from '../lib/client'
 import '../assets/style/productItem.scss'
 //component
 import CardItem from '../components/CardItem';
+//context
+import  { useStateContext } from '../context/CartContext';
+
 
 export default function ProductItem() {
   let { productSlug } = useParams()
+  const { decreaseQty, increaseQty, qty, onAdd } = useStateContext()
 
   const [data, setData] = useState({})
   const [products, setProducts] = useState([])
@@ -24,7 +28,6 @@ export default function ProductItem() {
         client
           .fetch(`*[_type == "product" && category == "${res[0].category}"]`)
           .then(res => {
-            console.log(res)
             setProducts(res)
           })
           .catch(err => {console.log(err)})
@@ -74,13 +77,18 @@ export default function ProductItem() {
 
         <div className="quantity">
           <p>Quantity: </p>
-          <div className="minus">-</div>
-          <div className="amount">1</div>
-          <div className='plus'>+</div>
+          <div className="minus" onClick={decreaseQty}>-</div>
+          <div className="amount">{qty}</div>
+          <div className='plus' onClick={increaseQty}>+</div>
         </div>
 
         <div className="buttons">
-          <button className='btn add-to-cart'>Add to Cart</button>
+          <button 
+            className='btn add-to-cart' 
+            onClick={() => onAdd(data, qty)}
+          >
+            Add to Cart
+          </button>
           <button className='btn buy_now'>Buy Now</button>
         </div>
       </div>

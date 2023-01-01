@@ -59,6 +59,21 @@ nav {
   .cart_icon {
     font-size: 2em;
     cursor: pointer;
+    position: relative;
+    span {
+      position: absolute;
+      top: -7px;
+      right: -10px;
+      background-color: $red;
+      color: #fff;
+      font-size: 13px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
     &:hover {
       color: #fff;
     }

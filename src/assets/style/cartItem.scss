@@ -1,0 +1,98 @@
+@import './var';
+
+.cart-item {
+  display: flex;
+  align-items: stretch;
+  
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid $red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    color: $red;
+    transition: all 0.3s linear;
+    &:hover {
+      box-shadow: 0px 0px 7px $red;
+      transform: scale(1.05);
+    }
+  }
+  .img {
+    background-color: $bg-ligth;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .img, .quantity {
+    width: 20%;
+  }
+  .details {
+    height: auto;
+    width: calc(60% - 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  .desc {
+    font-size: 1em;
+    margin-bottom: auto;
+  }
+  .price {
+    font-size: 1.5em;
+  }
+  .quantity {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .minus, .plus {
+    transition: all 0.5s linear;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    font-weight: 200;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .minus {
+    color: $red;
+    border-color: $red;
+  }
+  .plus {
+    color: green;
+    border-color: green;
+  }
+  .amount {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+}
