@@ -15,10 +15,6 @@ export default function Home() {
         <HeaderBanner />
         <CategoriesBanner />
         <Promos />
-
-        {/* 2 featured components with different 
-        props for laptop & smartphones*/}
-
         <Featured />
         <FooterBanner />
       </main>

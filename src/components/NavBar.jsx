@@ -8,34 +8,20 @@ import '../assets/style/nav.scss'
 //components
 import Modal from './Modal';
 //sanity
-import { client, urlFor } from '../lib/client'
+import { urlFor } from '../lib/client'
 //router
 import { Link } from 'react-router-dom'
 //context
 import { useStateContext } from '../context/CartContext';
+import { useCategoriesContext } from '../context/CategoriesContext';
 
 export default function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [data, setData] = useState({})
   const { cartItems } = useStateContext()
+  const { categories, fetchData } = useCategoriesContext()
 
   useEffect(() => {
-    client
-      .fetch('*[_type == "categories"]')
-      .then(res => {
-        //sort by decreated date
-        res.sort((a,b) => {
-          let keyA = new Date(a._createdAt)
-          let keyB = new Date(b._createdAt)
-
-          if(keyA < keyB) return -1
-          if(keyA > keyB) return 1
-          return 0;
-        })
-
-        setData(res)
-      })
-      .catch(err => {console.log(err)})
+    fetchData('categories')
   }, [])
 
   const handleClick = () => {
@@ -70,7 +56,7 @@ export default function NavBar() {
           </div>
           
           {
-            data && data.map((item) => {
+            categories && categories.map((item) => {
               return (
                 <Link 
                   onClick={() => setIsModalOpen(false)}

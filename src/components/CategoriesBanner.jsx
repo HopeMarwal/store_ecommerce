@@ -1,31 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 //scss
 import '../assets/style/categories.scss';
 //sanity
-import { client, urlFor } from '../lib/client';
+import { urlFor } from '../lib/client';
 //router 
 import { Link } from 'react-router-dom';
+//context
+import { useCategoriesContext } from '../context/CategoriesContext';
 
 export default function CategoriesBanner() {
-  const [data, setData] = useState([])
-  useEffect(() => {
-    client
-      .fetch('*[_type == "categories"]')
-      .then(res => {
-        //sort by dcreated date
-        res.sort((a,b) => {
-          let keyA = new Date(a._createdAt)
-          let keyB = new Date(b._createdAt)
 
-          if(keyA < keyB) return -1
-          if(keyA > keyB) return 1
-          return 0;
-        })
-
-        setData(res)
-      })
-      .catch(err => {console.log(err)})
-  }, [])
+  const { categories } = useCategoriesContext()
 
   const mapItems = (item) => {
     //category map item jsx
@@ -42,7 +27,7 @@ export default function CategoriesBanner() {
   return (
     <div className='categories'>
       {
-        data && data.map((item) => {
+        categories && categories.map((item) => {
           return (
             <Link 
               className='category'

@@ -18,7 +18,7 @@ export default function Featured(props) {
 
   useEffect(() => {
     client
-      .fetch('*[_type == "product"]')
+      .fetch('*[_type == "product" && category == "laptop" || category == "smartphone"]')
       .then(res => {
         let laptop = res.filter((item) => item.category === 'laptop').slice(0,3)
         let smartphone = res.filter((item) => item.category === 'smartphone').slice(0,3)

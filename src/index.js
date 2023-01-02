@@ -4,14 +4,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { StateContext } from './context/CartContext';
+import { CategoriesContext } from './context/CategoriesContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
     <BrowserRouter>
-    <StateContext>
-      <App />
-    </StateContext>
+
+      <StateContext>
+
+        <CategoriesContext>
+
+          <App />
+
+        </CategoriesContext>
+
+      </StateContext>
       
     </BrowserRouter>
    
