@@ -18,15 +18,40 @@ import { useCategoriesContext } from '../context/CategoriesContext';
 import LogoutButton from './auth/LogoutBtn';
 import LoginButton from './auth/LoginBtn';
 
-
-
 export default function NavBar() {
   //state
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [translate, setTranslate] = useState("70px")
+  const [lastScroll, setLastScroll] = useState(0)
   //context
   const { cartItems } = useStateContext()
   const { categories, fetchData } = useCategoriesContext()
 
+  //Effects
+  //nav scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {      
+      let newScroll = window.pageYOffset
+
+      if(newScroll > lastScroll && newScroll > 120) {
+        setTranslate('-250px')
+      } else if(newScroll < 10) {
+        setTranslate('70px')
+      } else {
+        setTranslate('0px')
+      }
+      setLastScroll(newScroll)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+
+  })
+
+  //Fetch categories
   useEffect(() => {
     fetchData('categories')
   }, [])
@@ -48,7 +73,8 @@ export default function NavBar() {
   }
  
   return (
-    <nav>
+    <div className={ lastScroll > 150 ? 'nav-wrapper scroll' : 'nav-wrapper'} style={{top: translate}}>
+      <nav>
       <span className='logo'>
         <Link to="/">Store</Link>
       </span>
@@ -113,6 +139,8 @@ export default function NavBar() {
         <LogoutButton />
       </button>
     </nav>
+    </div>
+
 
   )
 }

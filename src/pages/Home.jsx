@@ -11,13 +11,11 @@ import '../assets/style/style.scss'
 export default function Home() {
   return (
     <div className='home'>
-      <main>
         <HeaderBanner />
         <CategoriesBanner />
         <Promos />
         <Featured />
         <FooterBanner />
-      </main>
     </div>
   )
 }

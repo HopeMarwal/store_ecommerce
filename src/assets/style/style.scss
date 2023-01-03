@@ -7,8 +7,12 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   transition: background-color 0.2s linear;
+  position: relative;
   &.dark {
     background-color: $bg-dark;
+  }
+  main {
+    padding-top: 70px;
   }
 }
 

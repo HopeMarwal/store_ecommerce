@@ -25,12 +25,15 @@ function App() {
         <NavBar />
       </header>
       
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:category/:productSlug" element={<ProductItem />} />
-        <Route path="/product/:category" element={<Category />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:category/:productSlug" element={<ProductItem />} />
+          <Route path="/product/:category" element={<Category />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </main>
+      
       
       <Footer />
     </div>

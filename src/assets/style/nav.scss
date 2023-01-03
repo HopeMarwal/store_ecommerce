@@ -1,5 +1,13 @@
 @import './var';
 
+.nav-wrapper {
+  transition: all 0.5s linear;
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  top: 70px;
+  width: calc(100% - 20px);
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -9,7 +17,9 @@ nav {
   background-color: #000;
   color: $gray;
   border-radius: 10px;
-  position: relative;
+  max-width: 1080px;
+  margin: auto;
+  
   .logo {
     font-weight: bold;
     font-size: 3em;
