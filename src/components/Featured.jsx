@@ -10,9 +10,13 @@ import smartphoneNew from '../assets/img/phones.webp'
 import {client, urlFor} from '../lib/client'
 //react router
 import { Link } from 'react-router-dom';
+//context
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function Featured(props) {
-
+  //context
+  const { isDark } = useThemeContext()
+  //state
   const [dataLaptop, setDataLaptop] = useState([])
   const [dataSmartphone, setDataSmartphone] = useState([])
 
@@ -30,7 +34,7 @@ export default function Featured(props) {
   }, [])
 
   return (
-    <div className='featured'>
+    <div className={ isDark ? 'featured dark' : 'featured'}>
       <h3>Featured smartphones</h3>
 
       <div className='featured_row'>

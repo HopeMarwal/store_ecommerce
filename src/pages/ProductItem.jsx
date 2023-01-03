@@ -8,7 +8,8 @@ import '../assets/style/productItem.scss'
 //component
 import CardItem from '../components/CardItem';
 //context
-import  { useStateContext } from '../context/CartContext';
+import { useStateContext } from '../context/CartContext';
+import { useThemeContext } from '../context/ThemeContext';
 //toater
 import { toast } from 'react-hot-toast';
 //Auth
@@ -20,6 +21,7 @@ export default function ProductItem() {
   let { productSlug } = useParams()
   //context api
   const { decreaseQty, increaseQty, qty, onAdd } = useStateContext()
+  const { isDark } = useThemeContext()
   // auth
   const { isAuthenticated } = useAuth0()
   //state
@@ -61,7 +63,7 @@ export default function ProductItem() {
   }
 
   return (
-    <div className='product-item'>
+    <div className={ isDark ? 'product-item dark' : 'product-item'}>
 
       <div className="images">
 

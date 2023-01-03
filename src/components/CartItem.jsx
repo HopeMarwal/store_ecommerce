@@ -4,15 +4,17 @@ import '../assets/style/cartItem.scss'
 import { AiOutlineClose } from 'react-icons/ai';
 //context
 import { useStateContext } from '../context/CartContext'
+import { useThemeContext } from '../context/ThemeContext';
 //sanity
 import { urlFor } from '../lib/client';
 
 
 export default function CartItem({ product }) {
   const { toggleCartItemQty, onRemove } = useStateContext()
+  const { isDark } = useThemeContext()
 
   return (
-    <div className='cart-item'>
+    <div className={ isDark ? 'cart-item dark' : 'cart-item'}>
 
       <div className="close" onClick={() => onRemove(product)}>
         <AiOutlineClose />

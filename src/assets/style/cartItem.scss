@@ -3,7 +3,6 @@
 .cart-item {
   display: flex;
   align-items: stretch;
-  
   width: 100%;
   background-color: #fff;
   border-radius: 10px;
@@ -94,5 +93,20 @@
   .amount {
     font-weight: 500;
     font-size: 1.1em;
+  }
+  &.dark {
+    background-color: $bg-category-dark;
+    .title {
+      color: #fff;
+    }
+    .desc {
+      color: $text-secondary-dark;
+    }
+    .price {
+      color: #fff;
+    }
+    .quantity {
+      color: #fff;
+    }
   }
 }

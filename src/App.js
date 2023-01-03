@@ -12,10 +12,13 @@ import {Routes, Route} from 'react-router-dom';
 import Cart from './pages/Cart';
 //toaster
 import { Toaster } from 'react-hot-toast'
+//context
+import { useThemeContext } from './context/ThemeContext';
 
 function App() {
+  const { isDark } = useThemeContext()
   return (
-    <div className="App">
+    <div className={ isDark ? "App dark" : "App"}>
       <Toaster />
       <header>
         <Header />

@@ -6,8 +6,11 @@ import PromoCard from './PromoCard';
 import { useEffect, useState } from 'react';
 //sanity
 import { client, urlFor } from '../lib/client'
+//context
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function Promos() {
+  const { isDark } = useThemeContext()
 
   const [data, setData] = useState([])
   useEffect(() => {
@@ -20,7 +23,7 @@ export default function Promos() {
   }, [])
 
   return (
-    <div className='promo'>
+    <div className={ isDark ? 'promo dark' : 'promo'}>
       {
         data && data.map((item) => {
           return <PromoCard img={urlFor(item.image)} key={item._id} text={item.text} />

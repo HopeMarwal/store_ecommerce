@@ -4,12 +4,14 @@ import '../assets/style/cart.scss'
 import CartItem from '../components/CartItem'
 //context
 import { useStateContext } from '../context/CartContext'
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function Cart() {
+  const { isDark } = useThemeContext()
   const {  cartItems, totalPrice } = useStateContext()
 
   return (
-    <div className='cart'>
+    <div className={ isDark ? 'cart dark' : 'cart'}>
 
       {
         cartItems.length > 0 

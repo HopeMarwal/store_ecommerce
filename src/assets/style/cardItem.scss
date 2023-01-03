@@ -30,4 +30,13 @@
       transform: scale(1.05);
     }
   }
+  &.dark {
+    background-color: $bg-category-dark;
+    .desc {
+      color: $text-clr-dark;
+    }
+    .price {
+      color: #fff;
+    }
+  }
 }

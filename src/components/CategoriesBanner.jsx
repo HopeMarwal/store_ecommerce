@@ -7,9 +7,10 @@ import { urlFor } from '../lib/client';
 import { Link } from 'react-router-dom';
 //context
 import { useCategoriesContext } from '../context/CategoriesContext';
+import { useThemeContext } from '../context/ThemeContext';
 
 export default function CategoriesBanner() {
-
+  const { isDark } = useThemeContext()
   const { categories } = useCategoriesContext()
 
   const mapItems = (item) => {
@@ -25,7 +26,7 @@ export default function CategoriesBanner() {
   }
 
   return (
-    <div className='categories'>
+    <div className={ isDark ? 'categories dark' : 'categories'}>
       {
         categories && categories.map((item) => {
           return (

@@ -21,4 +21,9 @@
       width: calc(25% - 10px);
     }
   }
+  &.dark {
+    h3 {
+      color: $text-secondary-dark;
+    }
+  }
 }

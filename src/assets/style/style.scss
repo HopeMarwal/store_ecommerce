@@ -6,15 +6,18 @@
   background-color: $bg-ligth;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  transition: background-color 0.2s linear;
+  &.dark {
+    background-color: $bg-dark;
+  }
 }
 
 .home, header {
   max-width: 1100px;
   margin: auto;
   padding: 10px;
-
-
 }
+
 .btn {
   background-color: #fff;
   border-radius: 10px;

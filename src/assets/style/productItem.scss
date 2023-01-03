@@ -87,8 +87,8 @@
       border-color: $red;
     }
     .plus {
-      color: green;
-      border-color: green;
+      color: #008000;
+      border-color: #008000;
     }
     .amount {
       font-weight: 500;
@@ -138,6 +138,24 @@
     
       to {
         transform: translateX(-50%);
+      }
+    }
+  }
+  &.dark {
+    .details {
+      h3 {
+        color: #fff;
+      }
+      .desc {
+        color: $text-secondary-dark;
+      }
+      .quantity {
+        color: $text-clr-dark;
+      }
+    }
+    .maylike-products-wrapper {
+      h2 {
+        color: $text-clr-dark;
       }
     }
   }

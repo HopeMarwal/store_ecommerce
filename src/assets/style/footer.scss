@@ -14,4 +14,7 @@ footer {
     font-size: 1.7em;
     margin-bottom: 40px;
   }
+  &.dark {
+    color: $text-clr-dark;
+  }
 }

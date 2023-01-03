@@ -19,8 +19,11 @@ import LogoutButton from './auth/LogoutBtn';
 import LoginButton from './auth/LoginBtn';
 
 
+
 export default function NavBar() {
+  //state
   const [isModalOpen, setIsModalOpen] = useState(false)
+  //context
   const { cartItems } = useStateContext()
   const { categories, fetchData } = useCategoriesContext()
 

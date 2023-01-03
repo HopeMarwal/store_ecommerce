@@ -55,6 +55,14 @@
       }
     }
   }
+  &.dark {
+    .image {
+      background-color: $bg-category-dark;
+    }
+    p {
+      color: $text-clr-dark;
+    }
+  }
 }
 
 @media (max-width: 992px) {

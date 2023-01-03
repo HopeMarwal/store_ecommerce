@@ -40,6 +40,14 @@
       }
     }
   }
+  &.dark {
+    .promo_card {
+      background-color: $bg-category-dark;
+    }
+    .text {
+      color:$text-clr-dark;
+    }
+  }
 }
 
 @media (max-width: 992px) {

@@ -6,12 +6,16 @@ import { client, urlFor } from '../lib/client';
 import { Link } from 'react-router-dom'
 //component
 import CardItem from '../components/CardItem';
+//context
+import { useThemeContext } from '../context/ThemeContext';
 //scss
 import '../assets/style/category.scss'
 
 
 export default function Category() {
   const { category } = useParams()
+  const { isDark } =useThemeContext()
+
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function Category() {
   }, [category])
 
   return (
-    <div className='category-page'>
+    <div className={ isDark ? 'category-page dark' : 'category-page'}>
       <h3>{category}</h3>
       <div className='product_container'>
       {

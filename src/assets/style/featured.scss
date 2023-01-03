@@ -34,30 +34,38 @@
   .link_item {
     width: calc(25% - 5px);
   }
+  &.dark {
+    h3 {
+      color:#fff;
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .featured {
     &_row {
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
-    .link_item, .banner {
-      width: calc(50% - 5px);
+    .banner {
+      display: none;
+    }
+    .link_item {
+      min-width: calc(45% - 5px);
     }
   }
 }
 
 @media (max-width: 576px) {
   .featured {
-    &_row {
-      flex-wrap: wrap;
-    }
     .banner {
       display: none;
     }
     .link_item {
-      width: 90%;
-      margin: auto;
+      min-width: calc(75% - 5px);
     }
   }
 }
