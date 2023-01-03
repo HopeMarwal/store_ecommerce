@@ -79,9 +79,7 @@ export default function NavBar() {
       )
      } 
 
-      <div 
-        className="categories" 
-        onClick={handleClick}
+      <div className="nav_categories" onClick={handleClick}
       >
         <RxHamburgerMenu />
         <span>Categories</span>

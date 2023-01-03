@@ -15,13 +15,14 @@ nav {
     font-size: 3em;
     color: $red;
   }
-  .categories {
+  .nav_categories {
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: 1.5em;
     font-weight: 200;
     cursor: pointer;
+    margin-right: auto;
   }
   .search {
     flex: 1;
@@ -100,7 +101,7 @@ nav {
   }
   .modal {
     left: 17%;
-    top: 109px;
+    top: 78px;
     width: 500px;
   }
 }

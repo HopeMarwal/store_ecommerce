@@ -24,6 +24,11 @@ export default {
       type: 'number'
     },
     {
+      name: 'rating',
+      title: 'Rating',
+      type: 'number'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

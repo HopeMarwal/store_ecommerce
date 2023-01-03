@@ -14,6 +14,8 @@ import { useThemeContext } from '../context/ThemeContext';
 import { toast } from 'react-hot-toast';
 //Auth
 import { useAuth0 } from '@auth0/auth0-react'
+//rating
+import { Rating } from 'react-simple-star-rating'
 
 
 export default function ProductItem() {
@@ -98,7 +100,15 @@ export default function ProductItem() {
 
       <div className="details">
         <h3>{data?.name}</h3>
-        {/* TODO: rating component */}
+
+        <div className="rating">
+          <Rating 
+            initialValue={data?.rating}
+            readonly={true}
+            size={20}
+            allowFraction={true}
+          />
+        </div>
         <p className='desc'>{data?.description}</p>
         <p className="price">$ {data?.price}</p>
 
