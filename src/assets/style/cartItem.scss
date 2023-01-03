@@ -110,3 +110,31 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .cart-item {
+    .details {
+      width: calc(40% - 30px);
+    }
+    .quantity {
+      width: 40%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-item {
+    padding-top: 50px;
+    .img {
+      width: 40%;
+    }
+    .details {
+      width: calc(60% - 15px);
+    }
+    .quantity {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

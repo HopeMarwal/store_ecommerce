@@ -49,3 +49,12 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .cart {
+    margin-bottom: 30px;
+    .btn-pay {
+      width: 100%;
+    }
+  }  
+}

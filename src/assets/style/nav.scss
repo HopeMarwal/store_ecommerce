@@ -111,7 +111,7 @@ nav {
       display: none;
     }
   }
-  .categories {
+  .nav_categories {
     margin-right: auto;
   }
 }
@@ -121,7 +121,7 @@ nav {
     .logo {
       font-size: 2em;
     }
-    .categories {
+    .nav_categories {
       font-size: 1.3em;
     }
     .xs {
@@ -141,11 +141,12 @@ nav {
     .logo {
       font-size: 1.5em;
     }
-    .categories {
+    .nav_categories {
       font-size: 1em;
     }
     .cart_icon {
       font-size: 1.5em;
+      margin-right: 15px;
     }
     button {
       svg {
