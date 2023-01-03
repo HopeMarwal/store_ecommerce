@@ -3,27 +3,41 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+//context
 import { StateContext } from './context/CartContext';
 import { CategoriesContext } from './context/CategoriesContext';
+//auth
+import { Auth0Provider } from '@auth0/auth0-react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
+
 root.render(
-  <React.StrictMode>
+  //<React.StrictMode>
+    <Auth0Provider
+      domain={domain}
+      clientId={clientId}
+      redirectUri = {window.location.origin}
+    >
 
-    <BrowserRouter>
+      <BrowserRouter>
 
-      <StateContext>
+        <StateContext>
 
-        <CategoriesContext>
+          <CategoriesContext>
 
-          <App />
+            <App />
 
-        </CategoriesContext>
+          </CategoriesContext>
 
-      </StateContext>
+        </StateContext>
+        
+      </BrowserRouter>
       
-    </BrowserRouter>
+    </Auth0Provider>
    
-  </React.StrictMode>
+  //</React.StrictMode>
 );
 reportWebVitals();

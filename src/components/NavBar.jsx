@@ -7,6 +7,7 @@ import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import '../assets/style/nav.scss'
 //components
 import Modal from './Modal';
+import LoginButton from './auth/LoginBtn';
 //sanity
 import { urlFor } from '../lib/client'
 //router
@@ -14,11 +15,17 @@ import { Link } from 'react-router-dom'
 //context
 import { useStateContext } from '../context/CartContext';
 import { useCategoriesContext } from '../context/CategoriesContext';
+//auth
+import { useAuth0 } from '@auth0/auth0-react'
+import LogoutButton from './auth/LogoutBtn';
+
 
 export default function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { cartItems } = useStateContext()
   const { categories, fetchData } = useCategoriesContext()
+
+  const { isAuthenticated } = useAuth0();
 
   useEffect(() => {
     fetchData('categories')
@@ -40,7 +47,6 @@ export default function NavBar() {
     )
   }
  
-
   return (
     <nav>
       <span className='logo'>
@@ -100,12 +106,14 @@ export default function NavBar() {
       </div>
       
       <button className='lg'>
-        Login
-        <BsFillPersonFill />
+        { isAuthenticated ? 'Logout' : 'Login'}
+        <LoginButton />
+        <LogoutButton />
       </button>
 
       <button className='xs'>
-        <BsFillPersonFill />
+        <LoginButton />
+        <LogoutButton />
       </button>
     </nav>
 
