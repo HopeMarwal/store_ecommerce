@@ -1,4 +1,4 @@
-import React from 'react'
+//auth
 import { useAuth0 } from '@auth0/auth0-react'
 //icon
 import { FiLogOut } from 'react-icons/fi';

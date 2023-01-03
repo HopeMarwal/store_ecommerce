@@ -9,17 +9,25 @@ import '../assets/style/productItem.scss'
 import CardItem from '../components/CardItem';
 //context
 import  { useStateContext } from '../context/CartContext';
+//toater
+import { toast } from 'react-hot-toast';
+//Auth
+import { useAuth0 } from '@auth0/auth0-react'
 
 
 export default function ProductItem() {
+  // router params
   let { productSlug } = useParams()
+  //context api
   const { decreaseQty, increaseQty, qty, onAdd } = useStateContext()
-
+  // auth
+  const { isAuthenticated } = useAuth0()
+  //state
   const [data, setData] = useState({})
   const [products, setProducts] = useState([])
-
   const [imgIndex, setImgIndex] = useState(0)
 
+  //effects
   useEffect(() => {
     client
       .fetch(`*[_type == "product" && name == "${productSlug}"]`)
@@ -34,6 +42,23 @@ export default function ProductItem() {
         })
       .catch(err => {console.log(err)})
   }, [productSlug])
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [productSlug])
+
+  //event handlers
+  const handleAddToCart = (data, qty) => {
+    if ( isAuthenticated ) {
+      onAdd(data, qty)
+    } else {
+      toast.error(`Please login to add items to cart`)
+    }
+  }
 
   return (
     <div className='product-item'>
@@ -85,7 +110,7 @@ export default function ProductItem() {
         <div className="buttons">
           <button 
             className='btn add-to-cart' 
-            onClick={() => onAdd(data, qty)}
+            onClick={() => handleAddToCart(data, qty)}
           >
             Add to Cart
           </button>

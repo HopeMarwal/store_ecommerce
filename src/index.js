@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 //context
 import { StateContext } from './context/CartContext';
 import { CategoriesContext } from './context/CategoriesContext';
+import { ThemeContext } from './context/ThemeContext';
 //auth
 import { Auth0Provider } from '@auth0/auth0-react'
 
@@ -28,7 +29,11 @@ root.render(
 
           <CategoriesContext>
 
-            <App />
+            <ThemeContext>
+              <App />
+            </ThemeContext>
+
+           
 
           </CategoriesContext>
 
