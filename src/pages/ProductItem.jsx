@@ -10,12 +10,13 @@ import CardItem from '../components/CardItem';
 //context
 import { useStateContext } from '../context/CartContext';
 import { useThemeContext } from '../context/ThemeContext';
-//toater
+//toaster
 import { toast } from 'react-hot-toast';
 //Auth
 import { useAuth0 } from '@auth0/auth0-react'
 //rating
 import { Rating } from 'react-simple-star-rating'
+
 
 
 export default function ProductItem() {
@@ -33,6 +34,7 @@ export default function ProductItem() {
 
   //effects
   useEffect(() => {
+    const toastId = toast.loading('Loading...')
     client
       .fetch(`*[_type == "product" && name == "${productSlug}"]`)
       .then(res => {
@@ -41,10 +43,14 @@ export default function ProductItem() {
           .fetch(`*[_type == "product" && category == "${res[0].category}"]`)
           .then(res => {
             setProducts(res)
+            toast.dismiss(toastId)
+            toast.success('Page loaded!')
           })
           .catch(err => {console.log(err)})
         })
       .catch(err => {console.log(err)})
+
+    
   }, [productSlug])
 
   useEffect(() => {

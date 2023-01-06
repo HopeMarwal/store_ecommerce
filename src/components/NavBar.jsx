@@ -134,10 +134,6 @@ export default function NavBar() {
         <LogoutButton />
       </button>
 
-      <button className='xs'>
-        <LoginButton />
-        <LogoutButton />
-      </button>
     </nav>
     </div>
 
