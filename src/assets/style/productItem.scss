@@ -241,8 +241,12 @@
       }
     }
     .maylike-products-wrapper {
-      .link_item-slider {
-        width: 40%;
+      .marquee {
+        overflow-x: scroll;
+      }
+      .track {
+        position: relative;
+        animation: none;
       }
     }
   }

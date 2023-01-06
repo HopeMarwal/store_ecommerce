@@ -27,7 +27,7 @@ export const CategoriesContext = ({ children }) => {
         })
         setCategories(res)
         toast.dismiss(toastId)
-        toast.success('Page loaded!')
+        toast.success('Page ready!')
       })
       .catch(err => {console.log(err)})
 

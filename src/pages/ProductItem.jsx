@@ -48,7 +48,7 @@ export default function ProductItem() {
           .then(res => {
             setProducts(res)
             toast.dismiss(toastId)
-            toast.success('Page loaded!')
+            toast.success('Page ready!')
           })
           .catch(err => {console.log(err)})
         })
