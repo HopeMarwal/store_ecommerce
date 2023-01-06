@@ -14,12 +14,18 @@ export default function Promos() {
 
   const [data, setData] = useState([])
   useEffect(() => {
+    const controller = new AbortController()
+
     client
-      .fetch('*[_type == "promo"]')
+      .fetch('*[_type == "promo"]' , { signal: controller.signal })
       .then(res => {
         setData(res)
       })
       .catch(err => {console.log(err)})
+
+    return () => {
+      controller.abort()
+    }
   }, [])
 
   return (

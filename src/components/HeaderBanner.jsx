@@ -9,10 +9,16 @@ export default function HeaderBanner() {
   const [dataBanner, setDataBanner] = useState({})
   
   useEffect(() => {
+    const controller = new AbortController()
+
     client
-      .fetch('*[_type == "headerBanner"]')
+      .fetch('*[_type == "headerBanner"]', { signal: controller.signal })
       .then(res => {setDataBanner(res[0])})
       .catch(err => {console.log(err)})
+
+    return () => {
+      controller.abort()
+    }
   }, [])
 
   return (

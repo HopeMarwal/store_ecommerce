@@ -34,9 +34,13 @@ export default function ProductItem() {
 
   //effects
   useEffect(() => {
+
+    const controller = new AbortController()
+
     const toastId = toast.loading('Loading...')
+
     client
-      .fetch(`*[_type == "product" && name == "${productSlug}"]`)
+      .fetch(`*[_type == "product" && name == "${productSlug}"]`, { signal: controller.signal })
       .then(res => {
         setData(res[0])
         client
@@ -50,6 +54,9 @@ export default function ProductItem() {
         })
       .catch(err => {console.log(err)})
 
+    return () => {
+      controller.abort()
+    }
     
   }, [productSlug])
 

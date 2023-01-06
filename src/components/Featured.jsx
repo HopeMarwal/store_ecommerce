@@ -21,8 +21,10 @@ export default function Featured(props) {
   const [dataSmartphone, setDataSmartphone] = useState([])
 
   useEffect(() => {
+    const controller = new AbortController()
+
     client
-      .fetch('*[_type == "product" && category == "laptop" || category == "smartphone"]')
+      .fetch('*[_type == "product" && category == "laptop" || category == "smartphone"]', { signal: controller.signal })
       .then(res => {
         let laptop = res.filter((item) => item.category === 'laptop').slice(0,3)
         let smartphone = res.filter((item) => item.category === 'smartphone').slice(0,3)
@@ -31,6 +33,10 @@ export default function Featured(props) {
         setDataSmartphone(smartphone)
       })
       .catch(err => {console.log(err)})
+
+      return () => {
+        controller.abort()
+      }
   }, [])
 
   return (

@@ -9,12 +9,18 @@ export default function FooterBanner() {
 
   const [data, setData] = useState({})
   useEffect(() => {
+    const controller = new AbortController()
+
     client
-      .fetch('*[_type == "footerBanner"]')
+      .fetch('*[_type == "footerBanner"]', { signal: controller.signal })
       .then(res => {
         setData(res[0])
       })
       .catch(err => {console.log(err)})
+
+      return () => {
+        controller.abort()
+      }
   }, [])
 
   return (
