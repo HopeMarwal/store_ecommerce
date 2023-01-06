@@ -1,7 +1,22 @@
 @import './var';
 
+.headerBanner_wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+}
+
+@keyframes slide {
+  from {transform: translateX(0);}
+  to {transform: translateX(-100%);}
+}
+
 .headerBanner {
-  background: url('../img//header_banner_bg.webp');
+  position: absolute;
+  width: 100%;
+  max-width: 1100px;
+  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -11,6 +26,8 @@
   align-items: center;
   padding: 10px 10px 10px 20px;
   justify-content: space-between;
+  animation: slide;
+  animation-duration: 10s;
   .right, .left {
     width: 50%;
   }
