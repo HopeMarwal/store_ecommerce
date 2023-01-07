@@ -18,7 +18,6 @@ export default function HeaderBanner() {
     client
       .fetch('*[_type == "headerBanner"]', { signal: controller.signal })
       .then(res => {
-        console.log(res)
         setDataBanner(res)
       })
       .catch(err => {console.log(err)})

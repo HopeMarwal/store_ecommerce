@@ -6,11 +6,9 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
   const [qty, setQty] = useState(1)
 
   let foundProduct;
-  let index;
 
   const increaseQty = () => {
     setQty((prev) => prev + 1)
@@ -44,40 +42,31 @@ export const StateContext = ({ children }) => {
   }
 
   const toggleCartItemQty = (id, value) => {
-    foundProduct = cartItems.find((item) => item._id === id)
-    index = cartItems.findIndex((product) => product._id === id)
+    let newCartItems = [...cartItems]
+    let price;
 
-    let splicedCartItems = cartItems.filter((item) => item._id !== id)
+    for( let item of newCartItems) {
+      //find product
+      if(item._id === id) {
 
-    if (value === 'inc') {
+        price = item.price
 
-      let newCartItems = [
-        ...splicedCartItems,
-        {
-          ...foundProduct,
-          quantity: foundProduct.quantity + 1
-        }
-      ]
+        if(value === 'inc') {
+          //increase
+          item.quantity = item.quantity + 1
+          setTotalPrice((prev) => prev + price)
 
-      setCartItems(newCartItems)
-      setTotalPrice((prev) => prev + foundProduct.price)
+        } else {
+          //decrease
+          if(item.quantity > 1) {
+            item.quantity = item.quantity - 1
+            setTotalPrice((prev) => prev - price)
+          }   
 
-    } else if (value === 'dec') {
-      if (foundProduct.quantity > 1) {
-        let newCartItems = [
-          ...splicedCartItems,
-          {
-            ...foundProduct,
-            quantity: foundProduct.quantity - 1
-          }
-        ]
-
-        setCartItems(newCartItems)
-        setTotalPrice((prev) => prev - foundProduct.price)
+        }      
       }
-
-
-    }
+    }       
+    setCartItems(newCartItems) 
   }
 
   const onRemove = (product) => {
