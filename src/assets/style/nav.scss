@@ -107,9 +107,6 @@ nav {
       color: #fff;
     }
   }
-  .xs {
-    display: none;
-  }
   .modal {
     left: 17%;
     top: 78px;
@@ -135,12 +132,6 @@ nav {
     .nav_categories {
       font-size: 1.3em;
     }
-    .xs {
-      display: block;
-    }
-    .lg {
-      display: none;
-    }
     .modal {
       width: 450px;
       top: 105px
@@ -148,6 +139,11 @@ nav {
   }
 }
 @media (max-width: 576px) {
+  .nav-wrapper {
+    left: 0;
+    right: 0;
+    width: 100vw;
+  }
   nav {
     .logo {
       font-size: 1.5em;
@@ -163,12 +159,6 @@ nav {
       svg {
         font-size: 1.1em;
       }
-    }
-    .xs {
-      display: block;
-    }
-    .lg {
-      display: none;
     }
     .modal {
       position: fixed;

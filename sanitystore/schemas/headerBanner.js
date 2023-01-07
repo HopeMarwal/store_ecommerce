@@ -25,14 +25,6 @@ export default {
       options: {
         hotspot: true
       }
-    },
-    {
-      name: 'background',
-      title: 'Background',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
     }
   ]
 }

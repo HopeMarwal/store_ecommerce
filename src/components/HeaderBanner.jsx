@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import '../assets/style/headerBanner.scss'
 //sanity
 import { client, urlFor } from '../lib/client'
+//carousel
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
 
 
 export default function HeaderBanner() {
@@ -28,35 +31,39 @@ export default function HeaderBanner() {
   return (
     <div className="headerBanner_wrapper">
       {/* map data banner */}
-      {
-        dataBanner && dataBanner?.map((item, index) => {
-          return (
-            <div 
-              className={ index === ind ? 'headerBanner active' : 'headerBanner' }
-              style={{ background: `url('${urlFor(item.background)}')` }}
-              key={item._id}
-            >
+      <Carousel
+        autoPlay={true}
+        infiniteLoop={true}
+        interval={5000}
+        showArrows={false}
+        showStatus={false}
+        showThumbs={false}
+      >
+        {
+          dataBanner && dataBanner?.map((item, index) => {
+            return (
+              <div 
+                className='headerBanner'
+                key={item._id}
+              >
+                <div className='left'>
+                  <p>{item.smallText && item.smallText}</p>
+                  <h1>{item.largeText && item.largeText}</h1>
+                  <h3>{item.mediumText && item.mediumText}</h3>
+                  
+                </div>
 
-            </div>
-          )
-        })
-      }
-
-      {/* <div className='headerBanner'>
-        <div className='left'>
-          <p>{dataBanner.smallText && dataBanner.smallText}!!!</p>
-          <h1>{dataBanner.largeText && dataBanner.largeText}</h1>
-          <h3>{dataBanner.mediumText && dataBanner.mediumText}</h3>
-          
-        </div>
-        
-        <div className='right'>
-          {dataBanner.image && (
-            <img src={urlFor(dataBanner.image)} alt="headphones" />
-          )}
-        </div>
-        
-      </div> */}
+                <div className='right'>
+                  {item.image && (
+                    <img src={urlFor(item.image)} alt="headphones" />
+                  )}
+                </div>
+  
+              </div>
+            )
+          })
+        }
+      </Carousel>
     </div>
     
   )

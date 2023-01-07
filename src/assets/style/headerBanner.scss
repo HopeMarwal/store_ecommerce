@@ -1,30 +1,17 @@
 @import './var';
 
-.headerBanner_wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-  width: 100%;
-}
-
-@keyframes slide {
-  from {transform: translateX(0);}
-  to {transform: translateX(-100%);}
-}
-
 .headerBanner {
-  position: absolute;
-  width: 100%;
-  max-width: 1100px;
-  height: 200px;
-  background-size: cover;
+  background-image: url('../img/header_banner_bg.webp');
+  text-align: left;
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
   color: #fff;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 40px 20px;
   justify-content: space-between;
   animation: slide;
   animation-duration: 10s;
@@ -33,22 +20,26 @@
   }
   p {
     font-size: 2em;
-    color: $gray;
+    color: #fff;
+    font-weight: 900;
     margin-top: 30px;
+    text-shadow: 0px 0px 10px #F02D34, 0px 0px 20px #F02D34, 0px 0px 30px #F02D34, 0px 0px 40px #F02D34;
   }
   h1 {
-    font-size: 8em;
+    font-size: 7em;
     margin-top: 30px;
     font-weight: 900;
     color: red;
     text-transform: uppercase;
   }
   h3 {
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 3em;
   }
   img {
     width: 100%;
+    max-height: 400px;
+    object-fit: contain;
   }
 }
 @media (max-width: 992px) {
@@ -68,7 +59,7 @@
       font-size: 1em;
     }
     h1 {
-      font-size: 4em; 
+      font-size: 3em; 
     }
     h3 {
       margin-top: 20px;
@@ -79,9 +70,27 @@
 
 @media (max-width: 576px) {
   .headerBanner {
+    align-items: flex-start;
     margin-top: 0px;
+    p {
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
     h1 {
-      font-size: 3em;
+      font-size: 2em;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+    img {
+      max-height: 150px;
+    }
+    .right {
+      width: 40%;
+    }
+    .left {
+      width: 60%;
     }
   }
   
