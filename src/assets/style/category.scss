@@ -27,3 +27,23 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .category-page {
+    .product_container {
+      .link_item {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .category-page {
+    .product_container {
+      .link_item {
+        width: 100%;
+      }
+    }
+  }
+}
