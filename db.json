@@ -1,0 +1,160 @@
+{
+    "main": {
+            "categories": [
+                {
+                    "id": 1,
+                    "title": "Casco"
+                },
+                {
+                    "id": 2,
+                    "title": "RCA"
+                },
+                {
+                    "id": 3,
+                    "title": "Carte verde"
+                },
+                {
+                    "id": 4,
+                    "title": "Medicală"
+                },
+                {
+                    "id": 5,
+                    "title": "Accidente"
+                },
+                {
+                    "id": 6,
+                    "title": "Bunuri"
+                },
+                {
+                    "id": 7,
+                    "title": "Locuințe (imobile)"
+                }
+            ],
+            "icons": {
+                "lang": {
+                    "title": "Ru",
+                    "src": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689866843/next_preset/icons/lang_pwxjce.svg"
+                },
+                "phone": {
+                    "title": "Suna",
+                    "src": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689866843/next_preset/icons/phone_aoawfo.svg"
+                },
+                "messenger": {
+                    "title": "Messanger",
+                    "src": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689866843/next_preset/icons/messenger_oyxwce.svg"
+                },
+                "whatsapp": {
+                    "title": "whatsapp",
+                    "src": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689866843/next_preset/icons/whatsapp_ezfvgk.svg"
+                }
+
+            },
+            "casco": {
+                "object": [ 
+                    "Autovehicule înmatriculate în Republica Moldova, care aparţin persoanelor fizice şi juridice.",
+                    "Echipamentul suplimentar, care nu intră în dotarea autovehiculului conform listei de dotări ale uzinei producătoare.",
+                    "Conducătorul auto şi pasagerii, pentru cazuri de accidente care pot avea loc în timpul accidentelor rutiere."
+                ],
+                "riscs": [
+                    "- \"DAUNE\" - prejudiciile materiale cauzate Asiguratului prin deteriorarea sau distrugerea autovehiculului şi a echipamentului suplimentar ca urmare a:",
+                    "tamponării, lovirii sau ciocnirii cu un alt autovehicul, obiect; trecerii peste orice fel de obiecte statice sau în mişcare; căderii; căderii pe autovehicul a unor obiecte străine; derapării; răsturnării; alunecării;",
+                    "incendiului, descărcării electrice, exploziei, ploii torenţiale, grindinei, inundaţiei, uraganului, cutremurului de pămînt, surpărilor, alunecărilor de teren, căderilor abundente de zăpadă, avalanşelor, inclusiv acţiunea directă sau indirectă a acestora;",
+                    "„FURT” – furtul, jaful, tîlhăria, răpirea autovehicului, a părţilor componente sau pieselor acestuia;",
+                    "orice daune cauzate ca urmare a furtului, jafului, tîlhăriei, răpirei sau tentativei de furt, jaf, tîlharie, răpire a autovehicului, a părţilor lui componente şi a pieselor, echipamentului primit în asigurare, precum şi a echipamentului suplimentar şi accesoriilor dacă acestea sunt asigurate conform contractului de asigurare.",
+                    "„ACCIDENT” – cauzarea leziunilor corporale sau decesul conducătorului auto/pasagerilor ca rezultat al unui accident rutier.",
+                    " \"AUTOCASCO\" - pachetul complet de riscuri, compus din grupurile de risc \"DAUNĂ\" şi \"FURT\", care poate include suplimentar riscul \"ACCIDENT\""
+                ],
+                "progress": [
+                    {
+                        "title": "Alege tipul autovehiculului",
+                        "props": [
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/car_ias7fp.svg",
+                                "title": "Autoturism cu pînă la 9 locuri",
+                                "id": 1
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/refrigerant_mpuxi9.svg",
+                                "title": "Camion pînă la 3,5 tone",
+                                "id": 2
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783922/next_preset/icons/truck_xjvhm7.svg",
+                                "title": "Camion mai mult de 3,5 tone",
+                                "id": 3
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/minibus_wlllh6.svg",
+                                "title": "Microbus pînă la 20 locuri",
+                                "id": 4
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783923/next_preset/icons/bus_ej8vzl.svg",
+                                "title": "Autobuz peste 20 locuri",
+                                "id": 5
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783923/next_preset/icons/trailer_wwvkoa.svg",
+                                "title": "Remorci, semiremorci",
+                                "id": 6
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/refrigerant_mpuxi9.svg",
+                                "title": "Refrigeratoare, cisterne",
+                                "id": 7
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/technique_ypivli.svg",
+                                "title": "Tehnică specială",
+                                "id": 8
+                            },
+                            {
+                                "icon": "https://res.cloudinary.com/djr5mw1np/image/upload/v1689783921/next_preset/icons/other-technique_wudquy.svg",
+                                "title": "Echipament suplimentar",
+                                "id": 9
+                            }
+
+                        ]
+                    },
+                    {
+                        "title": "Alege marca",
+                        "props": {
+                            "marca": [
+                                {
+                                    "name": "alfa romeo",
+                                    "id": 1,
+                                    "models": ["civic", "w 220"]
+                                },
+                                {
+                                    "name": "bentley",
+                                    "id": 2,
+                                    "models": ["civic", "w 220"]
+                                },
+                                {
+                                    "name": "bmw",
+                                    "id": 3,
+                                    "models": ["civic", "camaro"]
+                                },
+                                {
+                                    "name": "chevrolet",
+                                    "id": 4,
+                                    "models": ["e 34", "camaro"]
+                                }
+                            ],
+                            "years" : [
+                                "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"
+                            ]
+                        }
+                           
+                    },
+                    {
+                        "title": "Alege valoarea pe piață",
+                        "props": {
+                            "territory": ["RM", "RM + CSI", "RM + CSI + EU + TURCIA"],
+                            "franchise": ["Fără Franșiză", "Cu aplicarea franșizei"]
+                        }
+                    }
+                ]
+            }
+        }
+}
